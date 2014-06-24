@@ -22,6 +22,6 @@ public class JsonReFormatMapper extends Mapper<LongWritable,Text,Text,Text> {
     String result1 = singleRequest.replace("bid_request\":\"", "bid_request\":");
     String result2 = result1.replace("\",\"time_stamp", ",\"time_stamp");
 
-    context.write(new Text(result2), new Text(result2));
+    context.write(null, new Text(result2));
   }
 }

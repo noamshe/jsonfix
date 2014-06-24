@@ -28,8 +28,6 @@ public class ReformatJSONMain {
     job.setMapperClass(JsonReFormatMapper.class);
 //    job.setReducerClass(NotUsingReducer.class);
     job.setNumReduceTasks(0);
-    job.setOutputKeyClass(Text.class);
-    job.setOutputValueClass(Text.class);
 
     job.setMapOutputKeyClass(Text.class);
     job.setMapOutputValueClass(Text.class);
@@ -42,8 +40,6 @@ public class ReformatJSONMain {
     String hdfsOutput = args[1];
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
-    FileInputFormat.addInputPath(job, new Path(hdfsInput));
-    FileOutputFormat.setOutputPath(job, new Path(hdfsOutput));
     boolean result = job.waitForCompletion(true);
     System.exit(result ? 0 : 1);
   }
