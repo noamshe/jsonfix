@@ -1,0 +1,1 @@
+mvn exec:java -Dexec.mainClass=com.foo.hadoop.ReformatJSONMain -Dexec.args="/data/temp1 /data/temp3"
